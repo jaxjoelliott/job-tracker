@@ -1,0 +1,7 @@
+{
+  "name": "job-tracker-dev",
+  "values": [
+    { "key": "base_url", "value": "YOUR_API_GATEWAY_URL/dev" },
+    { "key": "application_id", "value": "YOUR_APPLICATION_ID" }
+  ]
+}
