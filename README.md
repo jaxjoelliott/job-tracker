@@ -1,6 +1,6 @@
 # ApplicationFlow
 
-![ci](https://github.com/jaxjoelliott/application-flow/actions/workflows/ci.yml/badge.svg)
+![deploy](https://github.com/jaxjoelliott/application-flow/actions/workflows/deploy.yml/badge.svg)
 
 Deployed serverless HTTP API to track job application information.
 
