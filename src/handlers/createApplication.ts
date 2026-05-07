@@ -51,8 +51,8 @@ export const handler = async (event: {
       JSON.stringify({
         level: 'ERROR',
         function: 'createApplication',
-        error: error.message,
-        input: body,
+        error: (_error as Error).message,
+        input: event.body,
       }),
     );
     return {
