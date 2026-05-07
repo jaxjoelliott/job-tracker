@@ -191,8 +191,8 @@ resource "aws_lambda_function" "create_application" {
   role          = aws_iam_role.basic_lambda_role.arn
   handler       = "dist/handlers/createApplication.handler"
   runtime       = "nodejs22.x"
-
   filename      = "function.zip"
+  source_code_hash = filebase64sha256("function.zip")
 
   environment {
     variables = {
@@ -206,8 +206,8 @@ resource "aws_lambda_function" "list_applications" {
   role          = aws_iam_role.basic_lambda_role.arn
   handler       = "dist/handlers/listApplications.handler"
   runtime       = "nodejs22.x"
-
   filename      = "function.zip"
+  source_code_hash = filebase64sha256("function.zip")
   environment {
     variables = {
       TABLE_NAME = aws_dynamodb_table.job_applications_table.name
@@ -221,8 +221,8 @@ resource "aws_lambda_function" "get_application" {
   role          = aws_iam_role.basic_lambda_role.arn
   handler       = "dist/handlers/getApplication.handler"
   runtime       = "nodejs22.x"
-
   filename      = "function.zip"
+  source_code_hash = filebase64sha256("function.zip")
   environment {
     variables = {
       TABLE_NAME = aws_dynamodb_table.job_applications_table.name
@@ -236,8 +236,8 @@ resource "aws_lambda_function" "update_application" {
   role          = aws_iam_role.basic_lambda_role.arn
   handler       = "dist/handlers/updateApplication.handler"
   runtime       = "nodejs22.x"
-
   filename      = "function.zip"
+  source_code_hash = filebase64sha256("function.zip")
   environment {
     variables = {
       TABLE_NAME = aws_dynamodb_table.job_applications_table.name
@@ -251,8 +251,8 @@ resource "aws_lambda_function" "delete_application" {
   role          = aws_iam_role.basic_lambda_role.arn
   handler       = "dist/handlers/deleteApplication.handler"
   runtime       = "nodejs22.x"
-
   filename      = "function.zip"
+  source_code_hash = filebase64sha256("function.zip")
 
   environment {
     variables = {
