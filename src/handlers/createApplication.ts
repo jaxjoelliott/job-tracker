@@ -9,6 +9,14 @@ export const handler = async (event: {
 }): Promise<{ statusCode: number; body: string }> => {
   try {
     const body = JSON.parse(event.body);
+    console.log(
+      JSON.stringify({
+        level: 'INFO',
+        function: 'createApplication',
+        message: 'Request received',
+        input: body,
+      }),
+    );
     const id = crypto.randomUUID();
     await docClient.send(
       new PutCommand({
@@ -26,11 +34,27 @@ export const handler = async (event: {
         },
       }),
     );
+    console.log(
+      JSON.stringify({
+        level: 'INFO',
+        function: 'createApplication',
+        message: 'Application created successfully',
+        input: body,
+      }),
+    );
     return {
       statusCode: 201,
       body: JSON.stringify({ id }),
     };
   } catch (_error) {
+    console.log(
+      JSON.stringify({
+        level: 'ERROR',
+        function: 'createApplication',
+        error: (_error as Error).message,
+        input: event.body,
+      }),
+    );
     return {
       statusCode: 400,
       body: JSON.stringify({ message: 'Invalid request body' }),
