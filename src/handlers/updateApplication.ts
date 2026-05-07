@@ -61,6 +61,7 @@ export const handler = async (event: {
         function: 'updateApplication',
         message: 'Application updated successfully',
         input: event.pathParameters,
+        updatedAttributes: result.Attributes,
       }),
     );
 
