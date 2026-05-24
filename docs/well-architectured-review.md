@@ -1,4 +1,4 @@
-# AWS Well-Architectured Review
+# AWS Well-Architected Review
 
 ## Operational Excellence - How well you can run, monitor, and improve system over time
 
